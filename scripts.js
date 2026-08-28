@@ -1,6 +1,6 @@
 let etapa = 1;
 const botaoSim = document.getElementById ("SIMMM");
-const botaoNao = document.getElementById("Não");
+const botaoNao = document.getElementById("NAO");
 const pergunta = document.getElementById("pergunta");
 botaoSim.addEventListener("click", function() {
   if (etapa===1) {
