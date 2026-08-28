@@ -1,23 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pen</title>
-  </head>
-  <body> 
-    <div class="cartao">
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💚</title>
 
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #a5d6a7;
+
+      min-height: 100vh;
+      margin: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .coracao {
+      position: fixed;
+      bottom: 0;
+      font-size: 50px;
+      animation: subir 7s linear forwards;
+      pointer-events: none;
+    }
+
+    @keyframes subir {
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      to {
+        transform: translateY(-500px);
+        opacity: 0;
+      }
+    }
+
+    button {
+      font-size: 18px;
+      padding: 12px 25px;
+      margin: 10px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    #SIMMM {
+      background-color: #2e7d32;
+      color: white;
+    }
+
+    #NAO {
+      background-color: white;
+      color: #2e7d32;
+    }
+
+    .cartao {
+      background-color: white;
+      width: 80%;
+      max-width: 500px;
+      margin: auto;
+      padding: 40px 20px;
+      border-radius: 25px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+
+    #pergunta {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.5;
+      margin: 30px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="cartao">
     <h1>Oi, Beatryz Lemos 💚</h1>
 
-    <p id="pergunta">Você sabe que eu te amo, né?</p>
+    <p id="pergunta">
+      Você sabe que eu te amo, né?
+    </p>
 
     <button id="SIMMM">SIMMM 💚</button>
-    <button id="Não">NÃO</button>
-
+    <button id="NAO">NÃO</button>
   </div>
 
- <script src="./scripts.js"></script>
-  </body>
+  <script>
+    let etapa = 1;
+
+    const botaoSim = document.getElementById("SIMMM");
+    const botaoNao = document.getElementById("NAO");
+    const pergunta = document.getElementById("pergunta");
+
+    botaoSim.addEventListener("click", function() {
+
+      if (etapa === 1) {
+        pergunta.textContent = "E você sabe que eu quero passar a vida com você? 💚";
+        etapa = 2;
+      }
+
+      else if (etapa === 2) {
+        pergunta.textContent = "Você ainda escolheria viver tudo comigo de novo? 💚";
+        etapa = 3;
+      }
+
+      else if (etapa === 3) {
+        pergunta.textContent = "Então só falta uma pergunta... Coisa mais linda do planeta, você aceita se casar comigo? 💍💚";
+        etapa = 4;
+      }
+
+      else if (etapa === 4) {
+        pergunta.textContent = "Agora é oficial: eu escolho você para todos os meus dias. 💍💚";
+
+        botaoSim.style.display = "none";
+        botaoNao.style.display = "none";
+
+        for (let i = 0; i < 50; i++) {
+          const coracao = document.createElement("div");
+
+          coracao.textContent = "💚";
+          coracao.classList.add("coracao");
+          coracao.style.left = Math.random() * 100 + "%";
+
+          document.body.appendChild(coracao);
+        }
+
+        etapa = 5;
+      }
+
+    });
+
+    function fugir() {
+      const x = Math.random() * (window.innerWidth - botaoNao.offsetWidth);
+      const y = Math.random() * (window.innerHeight - botaoNao.offsetHeight);
+
+      botaoNao.style.position = "absolute";
+      botaoNao.style.left = x + "px";
+      botaoNao.style.top = y + "px";
+    }
+
+    botaoNao.addEventListener("mouseover", fugir);
+    botaoNao.addEventListener("touchstart", fugir);
+  </script>
+
+</body>
 </html>
