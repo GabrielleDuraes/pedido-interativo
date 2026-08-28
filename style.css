@@ -16,3 +16,50 @@ body {
     font-size: 50px;
     animation: subir 7s linear forwards;
 }
+@keyframes subir {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-500px);
+        opacity: 0;
+    }
+}
+  button {
+    font-size: 18px;
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+#SIMMM {
+    background-color: #2e7d32;
+    color: white;
+}
+#NAO {
+    background-color: white;
+    color: #2e7d32;
+}
+.cartao {
+    background-color: white;
+    width: 80%;
+    max-width: 500px;
+    margin: auto;
+    padding: 40px 20px;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+h1 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+#pergunta {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 30px 0;
+}
