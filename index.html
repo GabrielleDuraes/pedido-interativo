@@ -119,13 +119,13 @@
         etapa = 4;
       }
 
-      else if (etapa === 4) {
-        pergunta.textContent = "Agora é oficial: eu escolho você para todos os meus dias. 💍💚";
+    else if (etapa === 4) {
+    pergunta.textContent = "Agora é oficial: eu escolho você para todos os meus dias. 💍💚";
 
-        botaoSim.style.display = "none";
-        botaoNao.style.display = "none";
+    botaoSim.remove();
+    botaoNao.remove();
 
-        for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 50; i++) {
           const coracao = document.createElement("div");
 
           coracao.textContent = "💚";
