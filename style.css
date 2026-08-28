@@ -1,0 +1,18 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #a5d6a7;
+
+    min-height: 100vh;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.coracao {
+    position: fixed;
+    bottom: 0;
+    font-size: 50px;
+    animation: subir 7s linear forwards;
+}
